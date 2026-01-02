@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Алаторцева Наталия Beauty Studio</title>
     <meta name="description" content="Премиум beauty-услуги: наращивание ресниц, волос, окрашивание, кератин. Эксклюзивный уход в Москве.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- AOS библиотека для анимаций -->
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- AOS анимации -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,19 +20,16 @@
         }
         a { text-decoration: none; color: inherit; }
 
-        /* Header */
+        /* Главная страница – чистый фон */
         header {
             background: url('https://thumbs.dreamstime.com/z/elegant-pink-salon-interior-design-gold-accents-modern-beauty-boasts-chic-color-scheme-complemented-mirrors-384123823.jpg') center/cover no-repeat;
             height: 100vh;
             min-height: 700px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             position: relative;
         }
         header::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.25);
         }
 
         nav {
@@ -40,19 +38,24 @@
             justify-content: space-between;
             align-items: center;
             z-index: 10;
+            position: relative;
         }
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-family: 'Sacramento', cursive;
+            font-size: 4.8rem;
             font-weight: 400;
-            letter-spacing: 8px;
+            letter-spacing: 3px;
             color: #ffffff;
+            line-height: 1;
         }
         .logo span {
             display: block;
-            font-size: 1rem;
-            letter-spacing: 6px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            margin-top: -15px;
             opacity: 0.9;
+            text-transform: uppercase;
         }
 
         .nav-toggle { display: none; cursor: pointer; z-index: 11; }
@@ -70,24 +73,6 @@
         .nav-links a { transition: color 0.3s; }
         .nav-links a:hover { color: #d4af97; } /* rose gold */
 
-        .hero {
-            text-align: center;
-            color: #ffffff;
-            padding-bottom: 100px;
-            z-index: 10;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem;
-            letter-spacing: 15px;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.6rem;
-            letter-spacing: 6px;
-            font-style: italic;
-        }
-
         .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
         section { padding: 120px 0; }
 
@@ -100,7 +85,7 @@
             color: #000;
         }
 
-        /* Услуги с анимацией */
+        /* Услуги */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -122,7 +107,6 @@
             color: #fff;
             padding: 60px 40px 40px;
             text-align: center;
-            transition: background 0.4s;
         }
         .service-overlay h3 {
             font-family: 'Playfair Display', serif;
@@ -149,19 +133,10 @@
             color: #000;
         }
 
-        /* Форма и контакты */
+        /* Запись и контакты */
         #booking, #contacts { background: #f8f8f8; }
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        form {
-            display: grid;
-            gap: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .form-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        form { display: grid; gap: 30px; max-width: 600px; margin: 0 auto; }
         input, select, textarea {
             padding: 20px;
             border: none;
@@ -197,7 +172,7 @@
             font-size: 0.9rem;
         }
 
-        /* Мобильная адаптация */
+        /* Мобильная версия */
         @media (max-width: 968px) {
             .nav-toggle { display: block; }
             .nav-links {
@@ -213,8 +188,8 @@
                 transition: 0.4s;
             }
             .nav-links.active { opacity: 1; visibility: visible; }
-            .hero h1 { font-size: 4rem; letter-spacing: 10px; }
-            .hero p { font-size: 1.4rem; }
+            .logo { font-size: 3.8rem; }
+            .logo span { font-size: 1rem; margin-top: -10px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
@@ -227,7 +202,7 @@
         <nav>
             <div class="logo">
                 Алаторцева Наталия
-                <span>BEAUTY STUDIO</span>
+                <span>Beauty Studio</span>
             </div>
             <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
                 <span></span><span></span><span></span>
@@ -238,12 +213,9 @@
                 <a href="#contacts">Контакты</a>
             </div>
         </nav>
-        <div class="hero">
-            <h1>АЛАТОРЦЕВА НАТАЛИЯ</h1>
-            <p>BEAUTY STUDIO</p>
-        </div>
     </header>
 
+    <!-- Услуги -->
     <section id="services" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Услуги</h2>
@@ -314,6 +286,7 @@
         </div>
     </section>
 
+    <!-- Онлайн-запись -->
     <section id="booking" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Онлайн-запись</h2>
@@ -341,6 +314,7 @@
         </div>
     </section>
 
+    <!-- Контакты -->
     <section id="contacts" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Контакты</h2>
@@ -355,8 +329,8 @@
                     Пн–Вс: 10:00 – 21:00</p>
                     <p>Instagram: <a href="https://instagram.com/alatorceva_beauty" target="_blank">@alatorceva_beauty</a></p>
                 </div>
-                <div class="map-placeholder" data-aos="fade-left" data-aos-delay="400" style="background:#eee; height:400px; display:flex; align-items:center; justify-content:center; color:#999;">
-                    Здесь будет карта (вставьте iframe)
+                <div class="map-placeholder" data-aos="fade-left" data-aos-delay="400" style="background:#eee; height:400px; display:flex; align-items:center; justify-content:center; color:#999; border-radius:15px;">
+                    Здесь будет карта (вставьте iframe Яндекс или Google)
                 </div>
             </div>
         </div>
@@ -376,12 +350,6 @@
             once: true,
             offset: 100
         });
-
-        // Бургер-меню
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        document.querySelector('.nav-toggle').addEventListener('click', toggleMenu);
     </script>
 </body>
 </html>
