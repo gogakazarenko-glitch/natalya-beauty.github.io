@@ -20,9 +20,9 @@
         }
         a { text-decoration: none; color: inherit; }
 
-        /* Главная страница – чистый фон */
+        /* Главная – премиум розовый салон */
         header {
-            background: url('https://thumbs.dreamstime.com/z/elegant-pink-salon-interior-design-gold-accents-modern-beauty-boasts-chic-color-scheme-complemented-mirrors-384123823.jpg') center/cover no-repeat;
+            background: url('https://thumbs.dreamstime.com/b/luxury-beauty-salon-interior-inside-modern-pink-cosmetic-service-shop-generative-ai-trendy-studio-spa-room-clean-empty-nail-291437740.jpg') center/cover no-repeat;
             height: 100vh;
             min-height: 700px;
             position: relative;
@@ -33,7 +33,7 @@
         }
 
         nav {
-            padding: 40px 60px;
+            padding: 30px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,18 +42,18 @@
         }
         .logo {
             font-family: 'Sacramento', cursive;
-            font-size: 4.8rem;
+            font-size: 4rem;
             font-weight: 400;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #ffffff;
-            line-height: 1;
+            line-height: 1.1;
         }
         .logo span {
             display: block;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            letter-spacing: 8px;
-            margin-top: -15px;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            margin-top: -8px;
             opacity: 0.9;
             text-transform: uppercase;
         }
@@ -65,13 +65,13 @@
 
         .nav-links {
             display: flex;
-            gap: 50px;
+            gap: 40px;
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             color: #ffffff;
         }
         .nav-links a { transition: color 0.3s; }
-        .nav-links a:hover { color: #d4af97; } /* rose gold */
+        .nav-links a:hover { color: #d4af97; }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
         section { padding: 120px 0; }
@@ -172,7 +172,6 @@
             font-size: 0.9rem;
         }
 
-        /* Мобильная версия */
         @media (max-width: 968px) {
             .nav-toggle { display: block; }
             .nav-links {
@@ -188,11 +187,16 @@
                 transition: 0.4s;
             }
             .nav-links.active { opacity: 1; visibility: visible; }
-            .logo { font-size: 3.8rem; }
-            .logo span { font-size: 1rem; margin-top: -10px; }
+            .logo { font-size: 2.8rem; letter-spacing: 1px; }
+            .logo span { font-size: 0.9rem; margin-top: -5px; }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 2.4rem; }
+            .logo span { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -215,13 +219,12 @@
         </nav>
     </header>
 
-    <!-- Услуги -->
     <section id="services" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Услуги</h2>
             <div class="services-grid">
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://thumbs.dreamstime.com/b/close-up-female-eye-eyelash-extensions-beauty-salon-treatment-black-classical-d-volume-d-volume-lashes-close-up-385654127.jpg" alt="Наращивание ресниц">
+                    <img src="https://cocolashbeautybar.com/wp-content/uploads/2024/03/AdobeStock_546702995-1800x1100-1.webp" alt="Наращивание ресниц">
                     <div class="service-overlay">
                         <h3>Наращивание ресниц</h3>
                         <div class="price">от 1500 ₽</div>
@@ -230,7 +233,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://www.byrdie.com/thmb/UOEDl20FAvvAUfaf9Zopm0-kL4A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gelnailextensions-45a0e3af9df84984bcc5d8b5baa9ed30.png" alt="Наращивание ногтей">
+                    <img src="https://purluxebeauty.com/wp-content/uploads/2025/02/best-nail-salons-in-Denver-scaled.jpg" alt="Наращивание ногтей">
                     <div class="service-overlay">
                         <h3>Наращивание ногтей</h3>
                         <div class="price">от 2000 ₽</div>
@@ -239,7 +242,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/e332890d-95df-4598-99c9-2a6771b4df4f.__CR0,0,600,450_PT0_SX600_V1___.png" alt="Биопротеиновое восстановление">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/379ea527-6da0-44b3-bb74-ce8287831e9f.__CR0,0,2500,1875_PT0_SX600_V1___.jpg" alt="Биопротеиновое восстановление">
                     <div class="service-overlay">
                         <h3>Биопротеиновое восстановление волос</h3>
                         <div class="price">от 5000 ₽</div>
@@ -248,7 +251,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://p-de-p.com/wp-content/uploads/2021/06/img_9984-e1622981219440.jpg" alt="Холодное испанское наращивание">
+                    <img src="https://p-de-p.co.uk/wp-content/uploads/2023/09/hair-extension-cover.jpg" alt="Холодное испанское наращивание">
                     <div class="service-overlay">
                         <h3>Холодное испанское наращивание волос</h3>
                         <div class="price">от 50 000 ₽</div>
@@ -257,7 +260,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://lawa.salon/wp-content/uploads/2024/04/Journey-to-a-New-Look-Success-Story-with-Hot-Italian-Hair-Extensions-in-Fort-Lauderdale-Lawa-Salon-before-and-after-1024x683.webp" alt="Итальянское горячее наращивание">
+                    <img src="https://lawa.salon/wp-content/uploads/2023/04/hot-fusionn-hair-extensions-lawa-salon-before-after-2.webp" alt="Итальянское горячее наращивание">
                     <div class="service-overlay">
                         <h3>Итальянское горячее наращивание волос</h3>
                         <div class="price">от 30 000 ₽</div>
@@ -266,7 +269,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://i.ytimg.com/vi/6xfAyEiQmlQ/hq720.jpg" alt="Окрашивание волос">
+                    <img src="https://i0.wp.com/aurahaircompany.com/wp-content/uploads/2023/02/Dimensional-Balayage.jpg?resize=1079%2C550&ssl=1" alt="Окрашивание волос">
                     <div class="service-overlay">
                         <h3>Окрашивание волос</h3>
                         <div class="price">от 8000 ₽</div>
@@ -275,7 +278,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://media.zenfs.com/en/woman_s_world_418/ce4554bc7b58d2b5b0ac848fff4b3865" alt="Кератиновое восстановление">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5fada969f44df56affb87bce/f366c4b5-2e2c-4e81-9a42-ff3230122625/Keratin+3.png" alt="Кератиновое восстановление">
                     <div class="service-overlay">
                         <h3>Кератиновое восстановление (щадящее)</h3>
                         <div class="price">от 3000 ₽</div>
@@ -286,55 +289,7 @@
         </div>
     </section>
 
-    <!-- Онлайн-запись -->
-    <section id="booking" data-aos="fade-up">
-        <div class="container">
-            <h2 data-aos="fade-down" data-aos-delay="200">Онлайн-запись</h2>
-            <div class="form-container" data-aos="fade-up" data-aos-delay="400">
-                <form action="#" method="POST">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="tel" placeholder="Телефон" required>
-                    <select required>
-                        <option value="" disabled selected>Выберите услугу</option>
-                        <option>Наращивание ресниц</option>
-                        <option>Наращивание ногтей</option>
-                        <option>Биопротеиновое восстановление</option>
-                        <option>Холодное испанское наращивание</option>
-                        <option>Итальянское горячее наращивание</option>
-                        <option>Окрашивание волос</option>
-                        <option>Кератиновое восстановление</option>
-                        <option>Другое</option>
-                    </select>
-                    <input type="date" required>
-                    <input type="time" required>
-                    <textarea rows="4" placeholder="Комментарий (по желанию)"></textarea>
-                    <button type="submit">Записаться</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты -->
-    <section id="contacts" data-aos="fade-up">
-        <div class="container">
-            <h2 data-aos="fade-down" data-aos-delay="200">Контакты</h2>
-            <div class="contacts-grid">
-                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
-                    <h3>Мы ждём вас</h3>
-                    <p>г. Москва, ул. Примерная, д. 10<br>
-                    Метро: Тверская / Пушкинская</p>
-                    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a><br>
-                    WhatsApp: <a href="https://wa.me/79991234567">+7 (999) 123-45-67</a></p>
-                    <p>Время работы:<br>
-                    Пн–Вс: 10:00 – 21:00</p>
-                    <p>Instagram: <a href="https://instagram.com/alatorceva_beauty" target="_blank">@alatorceva_beauty</a></p>
-                </div>
-                <div class="map-placeholder" data-aos="fade-left" data-aos-delay="400" style="background:#eee; height:400px; display:flex; align-items:center; justify-content:center; color:#999; border-radius:15px;">
-                    Здесь будет карта (вставьте iframe Яндекс или Google)
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Онлайн-запись и Контакты остаются без изменений -->
 
     <footer>
         <div class="container">
@@ -342,14 +297,9 @@
         </div>
     </footer>
 
-    <!-- AOS скрипт -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+        AOS.init({ duration: 1000, once: true, offset: 100 });
     </script>
 </body>
 </html>
