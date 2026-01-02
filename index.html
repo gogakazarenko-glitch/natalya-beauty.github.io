@@ -6,7 +6,7 @@
     <title>Алаторцева Наталия Beauty Studio</title>
     <meta name="description" content="Премиум beauty-услуги: наращивание ресниц, волос, окрашивание, кератин. Эксклюзивный уход в Москве.">
     <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
     <!-- AOS анимации -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -26,9 +26,6 @@
             height: 100vh;
             min-height: 700px;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         header::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -42,11 +39,11 @@
             align-items: center;
             z-index: 10;
             position: relative;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Для мобильных */
         }
         .logo {
             font-family: 'Sacramento', cursive;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 400;
             letter-spacing: 2px;
             color: #ffffff;
@@ -55,26 +52,11 @@
         .logo span {
             display: block;
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 6px;
-            margin-top: -5px;
+            margin-top: -8px;
             opacity: 0.9;
             text-transform: uppercase;
-        }
-
-        /* Центральная надпись — только имя */
-        .hero-text {
-            text-align: center;
-            color: #ffffff;
-            z-index: 10;
-            padding-bottom: 100px;
-        }
-        .hero-text h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 8rem;
-            font-weight: 400;
-            letter-spacing: 5px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .nav-links {
@@ -186,7 +168,7 @@
             font-size: 0.9rem;
         }
 
-        /* Мобильная версия */
+        /* Мобильная версия – без бургер-меню */
         @media (max-width: 968px) {
             nav {
                 padding: 20px 30px;
@@ -194,7 +176,7 @@
                 align-items: flex-start;
                 gap: 20px;
             }
-            .logo { font-size: 2.8rem; }
+            .logo { font-size: 3rem; }
             .logo span { font-size: 1rem; margin-top: -5px; }
             .nav-links {
                 flex-direction: column;
@@ -202,16 +184,15 @@
                 font-size: 1.3rem;
                 align-self: flex-end;
             }
-            .hero-text h1 { font-size: 5.5rem; }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
         }
 
         @media (max-width: 480px) {
-            .logo { font-size: 2.4rem; }
+            .logo { font-size: 2.6rem; }
             .logo span { font-size: 0.9rem; }
-            .hero-text h1 { font-size: 4.5rem; }
+            .nav-links { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -225,23 +206,16 @@
             </div>
             <div class="nav-links">
                 <a href="#services">Услуги</a>
-                <a href="#booking">Записаться</a> <!-- Новая ссылка -->
+                <a href="#booking">Запись</a>
                 <a href="#contacts">Контакты</a>
             </div>
         </nav>
-
-        <!-- Только одна красивая надпись в центре -->
-        <div class="hero-text">
-            <h1>Алаторцева Наталия</h1>
-        </div>
     </header>
 
-    <!-- Остальные разделы (Услуги, Запись, Контакты) без изменений -->
     <section id="services" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Услуги</h2>
             <div class="services-grid">
-                <!-- Все 7 карточек услуг -->
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://cocolashbeautybar.com/wp-content/uploads/2024/03/AdobeStock_546702995-1800x1100-1.webp" alt="Наращивание ресниц">
                     <div class="service-overlay">
