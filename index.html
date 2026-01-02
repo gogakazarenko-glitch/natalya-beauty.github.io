@@ -161,7 +161,7 @@
             box-shadow: 0 10px 25px rgba(231, 180, 188, 0.6);
         }
 
-        /* Форма */
+        /* Форма записи */
         #booking { background: #fdf2f5; }
         .form-container {
             max-width: 700px;
@@ -200,8 +200,8 @@
         #contacts { background: #4a4a4a; color: white; }
         .contacts-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
             text-align: center;
         }
         .contact-info h3 { color: #f7cac9; margin-bottom: 20px; }
@@ -265,7 +265,9 @@
                 <span>Beauty Studio</span>
             </div>
             <div class="nav-toggle" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <div class="nav-links" id="navLinks">
                 <a href="#services">Услуги</a>
@@ -279,7 +281,7 @@
         </div>
     </header>
 
-    <!-- Услуги -->
+    <!-- Услуги и цены (все 7 услуг) -->
     <section id="services">
         <div class="container">
             <h2>Услуги и цены</h2>
@@ -292,7 +294,7 @@
                         <a href="#booking" class="btn">Записаться</a>
                     </div>
                 </div>
-                <!-- Остальные карточки услуг остаются теми же (вставьте их сюда из предыдущей версии) -->
+
                 <div class="service-card">
                     <div class="service-img" style="background-image: url('https://www.byrdie.com/thmb/UOEDl20FAvvAUfaf9Zopm0-kL4A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gelnailextensions-45a0e3af9df84984bcc5d8b5baa9ed30.png');"></div>
                     <div class="service-content">
@@ -301,12 +303,104 @@
                         <a href="#booking" class="btn">Записаться</a>
                     </div>
                 </div>
-                <!-- ... и так далее для всех 7 услуг ... -->
+
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://m.media-amazon.com/images/S/aplus-media-library-service-media/e332890d-95df-4598-99c9-2a6771b4df4f.__CR0,0,600,450_PT0_SX600_V1___.png');"></div>
+                    <div class="service-content">
+                        <h3>Биопротеиновое восстановление волос</h3>
+                        <div class="price">от 5000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://p-de-p.com/wp-content/uploads/2021/06/img_9984-e1622981219440.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Холодное испанское наращивание волос</h3>
+                        <div class="price">от 50 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://lawa.salon/wp-content/uploads/2024/04/Journey-to-a-New-Look-Success-Story-with-Hot-Italian-Hair-Extensions-in-Fort-Lauderdale-Lawa-Salon-before-and-after-1024x683.webp');"></div>
+                    <div class="service-content">
+                        <h3>Итальянское горячее наращивание волос</h3>
+                        <div class="price">от 30 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://i.ytimg.com/vi/6xfAyEiQmlQ/hq720.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Окрашивание волос</h3>
+                        <div class="price">от 8000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://media.zenfs.com/en/woman_s_world_418/ce4554bc7b58d2b5b0ac848fff4b3865');"></div>
+                    <div class="service-content">
+                        <h3>Кератиновое восстановление (щадящее)</h3>
+                        <div class="price">от 3000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Форма записи и Контакты остаются без изменений (вставьте из предыдущей версии) -->
+    <!-- Онлайн-запись -->
+    <section id="booking">
+        <div class="container">
+            <h2>Онлайн-запись</h2>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <select required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option>Наращивание ресниц</option>
+                        <option>Наращивание ногтей</option>
+                        <option>Биопротеиновое восстановление</option>
+                        <option>Холодное испанское наращивание</option>
+                        <option>Итальянское горячее наращивание</option>
+                        <option>Окрашивание волос</option>
+                        <option>Кератиновое восстановление</option>
+                        <option>Другое</option>
+                    </select>
+                    <input type="date" required>
+                    <input type="time" required>
+                    <textarea rows="4" placeholder="Комментарий (по желанию)"></textarea>
+                    <button type="submit">Записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h3>Мы ждём вас</h3>
+                    <p>г. Москва, ул. Примерная, д. 10<br>
+                    Метро: Тверская / Пушкинская</p>
+                    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a><br>
+                    WhatsApp: <a href="https://wa.me/79991234567">+7 (999) 123-45-67</a></p>
+                    <p>Время работы:<br>
+                    Пн–Вс: 10:00 – 21:00</p>
+                    <p>Instagram: <a href="https://instagram.com/alatorceva_beauty" target="_blank">@alatorceva_beauty</a></p>
+                </div>
+                <div class="map-placeholder">
+                    Здесь будет карта (вставьте iframe Яндекс или Google)
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
