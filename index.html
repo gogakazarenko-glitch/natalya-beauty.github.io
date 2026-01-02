@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алаторцева Наталья Beauty Studio — Наращивание ресниц, волос, маникюр</title>
+    <meta name="description" content="Beauty Studio Алаторцева Наталья. Премиум-услуги: наращивание ресниц, волос, ногтей, окрашивание, кератин.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #fff8f9 0%, #fdf2f5 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Шапка и навигация */
+        header {
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            position: relative;
+        }
+        header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.45);
+        }
+        nav {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+        .logo span {
+            display: block;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            font-size: 1.1rem;
+        }
+        .nav-links a:hover { color: #c49aaa; }
+        .hero {
+            text-align: center;
+            z-index: 10;
+            padding-bottom: 100px;
+        }
+        .hero h1 {
+            font-size: 5.5rem;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .hero .subtitle {
+            font-size: 1.8rem;
+            font-style: italic;
+            letter-spacing: 5px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 100px 0; }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #c49aaa;
+            position: relative;
+        }
+        h2::after {
+            content: ''; width: 80px; height: 3px; background: #c49aaa;
+            display: block; margin: 20px auto;
+        }
+
+        /* Услуги */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        .service-content {
+            padding: 30px;
+            text-align: center;
+        }
+        .service-content h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .price {
+            font-size: 2rem;
+            color: #c49aaa;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #c49aaa;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #b08090; }
+
+        /* Галерея */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 400px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
+
+        /* Мастера */
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .master-card {
+            text-align: center;
+        }
+        .master-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid #c49aaa;
+        }
+        .master-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Форма записи */
+        #booking {
+            background: #f9f0f2;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        form {
+            display: grid;
+            gap: 20px;
+        }
+        input, select, textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        button[type="submit"] {
+            background: #c49aaa;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover { background: #b08090; }
+
+        /* Контакты */
+        #contacts {
+            background: #333;
+            color: white;
+        }
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        .map-placeholder {
+            background: #444;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .contact-info h3 { margin-bottom: 20px; color: #c49aaa; }
+
+        footer {
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero .subtitle { font-size: 1.4rem; }
+            .logo { font-size: 2.2rem; }
+            .nav-links { flex-direction: column; gap: 15px; }
+            nav { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                Алаторцева Наталья
+                <span>Beauty Studio</span>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Услуги</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#masters">Мастера</a>
+                <a href="#booking">Запись</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Алаторцева Наталья</h1>
+            <p class="subtitle">Beauty Studio</p>
+        </div>
+    </header>
+
+    <!-- Услуги -->
+    <section id="services">
+        <div class="container">
+            <h2>Услуги и цены</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1607799279861-0e8b0e7a5d0b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Наращивание ресниц</h3>
+                        <div class="price">от 1500 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1594737621554-2a3d9e9e3c6e?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Наращивание ногтей</h3>
+                        <div class="price">от 2000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1635347010793-domr7a-4d3d9?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Биопротеиновое восстановление волос</h3>
+                        <div class="price">от 5000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1622737135733-7a0f3bf5e79b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Холодное испанское наращивание волос</h3>
+                        <div class="price">от 50 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Итальянское горячее наращивание волос</h3>
+                        <div class="price">от 30 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1600585153490-76fb20a32601?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Окрашивание волос</h3>
+                        <div class="price">от 8000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1631217896938-7dadaa80f6e3?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Кератиновое восстановление (щадящее)</h3>
+                        <div class="price">от 3000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея работ -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Наши работы</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Наращивание ресниц">
+                    <div class="overlay">Классическое наращивание ресниц</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1605496915934-9f13c7d1c985?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Маникюр">
+                    <div class="overlay">Дизайн ногтей</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-3b901a7ac6d7?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Наращивание волос">
+                    <div class="overlay">Итальянское наращивание</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1622737135733-7a0f3bf5e79b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Окрашивание">
+                    <div class="overlay">Сложное окрашивание Airtouch</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f4b25?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Ресницы">
+                    <div class="overlay">2D объём</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1631217896938-7dadaa80f6e3?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Кератин">
+                    <div class="overlay">До/После кератинового восстановления</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Мастера -->
+    <section id="masters">
+        <div class="container">
+            <h2>Наши мастера</h2>
+            <div class="masters-grid">
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Наталья Алаторцева">
+                    </div>
+                    <h3>Наталья Алаторцева</h3>
+                    <p>Основатель и топ-мастер студии<br>Специализация: наращивание волос, сложные окрашивания, кератин<br>Стаж 12 лет</p>
+                </div>
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def65654?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Анна">
+                    </div>
+                    <h3>Анна</h3>
+                    <p>Мастер по наращиванию ресниц и дизайну ногтей<br>Стаж 8 лет</p>
+                </div>
+                <div class="master-card">
+                    <div class="master-photo">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8e5b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80" alt="Екатерина">
+                    </div>
+                    <h3>Екатерина</h3>
+                    <p>Колорист, сложные техники окрашивания<br>Стаж 10 лет</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма записи -->
+    <section id="booking">
+        <div class="container">
+            <h2>Онлайн-запись</h2>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <select required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option>Наращивание ресниц</option>
+                        <option>Наращивание ногтей</option>
+                        <option>Наращивание волос</option>
+                        <option>Окрашивание</option>
+                        <option>Кератин</option>
+                        <option>Другое</option>
+                    </select>
+                    <input type="date" required>
+                    <input type="time" required>
+                    <textarea rows="4" placeholder="Комментарий (по желанию)"></textarea>
+                    <button type="submit">Записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h3>Мы ждём вас</h3>
+                    <p>г. Москва, ул. Примерная, д. 10<br>
+                    Метро: Тверская / Пушкинская</p>
+                    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a><br>
+                    WhatsApp: <a href="https://wa.me/79991234567">+7 (999) 123-45-67</a></p>
+                    <p>Время работы:<br>
+                    Пн–Вс: 10:00 – 21:00</p>
+                    <p>Instagram: <a href="https://instagram.com/alatorceva_beauty" target="_blank">@alatorceva_beauty</a></p>
+                </div>
+                <div class="map-placeholder">
+                    Здесь будет карта Яндекс или Google (вставьте iframe)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Алаторцева Наталья Beauty Studio. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
