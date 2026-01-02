@@ -39,6 +39,7 @@
             align-items: center;
             z-index: 10;
             position: relative;
+            flex-wrap: wrap; /* Для мобильных */
         }
         .logo {
             font-family: 'Sacramento', cursive;
@@ -56,11 +57,6 @@
             margin-top: -8px;
             opacity: 0.9;
             text-transform: uppercase;
-        }
-
-        .nav-toggle { display: none; cursor: pointer; z-index: 11; }
-        .nav-toggle span {
-            width: 30px; height: 2px; background: #fff; display: block; margin: 8px 0; transition: 0.3s;
         }
 
         .nav-links {
@@ -172,31 +168,31 @@
             font-size: 0.9rem;
         }
 
+        /* Мобильная версия – без бургер-меню */
         @media (max-width: 968px) {
-            .nav-toggle { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 0; left: 0; right: 0; bottom: 0;
-                background: rgba(0,0,0,0.95);
+            nav {
+                padding: 20px 30px;
                 flex-direction: column;
-                justify-content: center;
-                gap: 60px;
-                font-size: 2rem;
-                opacity: 0;
-                visibility: hidden;
-                transition: 0.4s;
+                align-items: flex-start;
+                gap: 20px;
             }
-            .nav-links.active { opacity: 1; visibility: visible; }
-            .logo { font-size: 2.8rem; letter-spacing: 1px; }
-            .logo span { font-size: 0.9rem; margin-top: -5px; }
+            .logo { font-size: 3rem; }
+            .logo span { font-size: 1rem; margin-top: -5px; }
+            .nav-links {
+                flex-direction: column;
+                gap: 20px;
+                font-size: 1.3rem;
+                align-self: flex-end;
+            }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
         }
 
         @media (max-width: 480px) {
-            .logo { font-size: 2.4rem; }
-            .logo span { font-size: 0.8rem; }
+            .logo { font-size: 2.6rem; }
+            .logo span { font-size: 0.9rem; }
+            .nav-links { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -208,10 +204,7 @@
                 Алаторцева Наталия
                 <span>Beauty Studio</span>
             </div>
-            <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links">
                 <a href="#services">Услуги</a>
                 <a href="#booking">Запись</a>
                 <a href="#contacts">Контакты</a>
@@ -259,7 +252,6 @@
                     </div>
                 </div>
 
-                <!-- Новое премиум-фото для итальянского горячего наращивания -->
                 <div class="service-item" data-aos="fade-up" data-aos-delay="500">
                     <img src="https://images.squarespace-cdn.com/content/v1/65df5ff8502b9f2c3fc528f5/cf481c91-38e5-47f8-8082-c77bb3bdc627/Photo+May+12+2024%2C+8+59+38+AM.jpg" alt="Итальянское горячее наращивание волос">
                     <div class="service-overlay">
