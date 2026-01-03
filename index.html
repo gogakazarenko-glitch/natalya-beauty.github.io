@@ -6,7 +6,7 @@
     <title>Алаторцева Наталия Beauty Studio</title>
     <meta name="description" content="Премиум beauty-услуги: наращивание ресниц, волос, окрашивание, кератин. Эксклюзивный уход в Москве.">
     <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
     <!-- AOS анимации -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -26,9 +26,6 @@
             height: 100vh;
             min-height: 700px;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         header::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -46,7 +43,7 @@
         }
         .logo {
             font-family: 'Sacramento', cursive;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 400;
             letter-spacing: 2px;
             color: #ffffff;
@@ -55,25 +52,11 @@
         .logo span {
             display: block;
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 6px;
-            margin-top: -5px;
+            margin-top: -8px;
             opacity: 0.9;
             text-transform: uppercase;
-        }
-
-        .hero-text {
-            text-align: center;
-            color: #ffffff;
-            z-index: 10;
-            padding-bottom: 100px;
-        }
-        .hero-text h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 8rem;
-            font-weight: 400;
-            letter-spacing: 5px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .nav-links {
@@ -146,8 +129,8 @@
             color: #000;
         }
 
-        /* Запись и контакты */
-        #booking, #contacts { background: #f8f8f8; }
+        /* Запись */
+        #booking { background: #f8f8f8; }
         .form-container { max-width: 800px; margin: 0 auto; text-align: center; }
         form { display: grid; gap: 30px; max-width: 600px; margin: 0 auto; }
         input, select, textarea {
@@ -169,30 +152,25 @@
         }
         button[type="submit"]:hover { background: #d4af97; color: #000; }
 
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
+        /* Контакты — только Telegram */
+        #contacts { background: #f8f8f8; padding: 150px 20px; }
+        .contacts-telegram {
             text-align: center;
         }
-        .contact-info h3 { color: #d4af97; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
-
-        /* Кнопка Telegram */
         .telegram-btn {
             display: inline-block;
             background: linear-gradient(to right, #d4af97, #e8b4bc);
-            color: white;
-            padding: 16px 40px;
+            color: #ffffff;
+            padding: 25px 70px;
             border-radius: 50px;
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-top: 30px;
-            box-shadow: 0 8px 20px rgba(212, 165, 165, 0.3);
-            transition: all 0.3s;
+            font-size: 2rem;
+            box-shadow: 0 15px 40px rgba(212, 165, 165, 0.4);
+            transition: all 0.4s;
         }
         .telegram-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(212, 165, 165, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(212, 165, 165, 0.6);
         }
 
         footer {
@@ -211,7 +189,7 @@
                 align-items: flex-start;
                 gap: 20px;
             }
-            .logo { font-size: 2.8rem; }
+            .logo { font-size: 3rem; }
             .logo span { font-size: 1rem; margin-top: -5px; }
             .nav-links {
                 flex-direction: column;
@@ -219,16 +197,17 @@
                 font-size: 1.3rem;
                 align-self: flex-end;
             }
-            .hero-text h1 { font-size: 5.5rem; }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
+            .telegram-btn { font-size: 1.6rem; padding: 20px 50px; }
         }
 
         @media (max-width: 480px) {
-            .logo { font-size: 2.4rem; }
+            .logo { font-size: 2.6rem; }
             .logo span { font-size: 0.9rem; }
-            .hero-text h1 { font-size: 4.5rem; }
+            .nav-links { font-size: 1.2rem; }
+            .telegram-btn { font-size: 1.4rem; padding: 18px 40px; }
         }
     </style>
 </head>
@@ -242,56 +221,117 @@
             </div>
             <div class="nav-links">
                 <a href="#services">Услуги</a>
-                <a href="#booking">Записаться</a>
+                <a href="#booking">Запись</a>
                 <a href="#contacts">Контакты</a>
             </div>
         </nav>
-
-        <div class="hero-text">
-            <h1>Алаторцева Наталия</h1>
-        </div>
     </header>
 
-    <!-- Услуги (без изменений) -->
+    <!-- Услуги -->
     <section id="services" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Услуги</h2>
             <div class="services-grid">
-                <!-- Все 7 карточек услуг как раньше -->
-                <!-- (оставил без изменений для краткости, но они те же) -->
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://cocolashbeautybar.com/wp-content/uploads/2024/03/AdobeStock_546702995-1800x1100-1.webp" alt="Наращивание ресниц">
+                    <div class="service-overlay">
+                        <h3>Наращивание ресниц</h3>
+                        <div class="price">от 1500 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://fd2d57c93a9bc78bdcec.cdn6.editmysite.com/uploads/b/fd2d57c93a9bc78bdcecc04ca2dcf85f22874e44c9f0727815eadd0228308399/2023-08-15_07-57-37_1692100687.jpg?width=2400&optimize=medium" alt="Наращивание ногтей">
+                    <div class="service-overlay">
+                        <h3>Наращивание ногтей</h3>
+                        <div class="price">от 2000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/379ea527-6da0-44b3-bb74-ce8287831e9f.__CR0,0,2500,1875_PT0_SX600_V1___.jpg" alt="Биопротеиновое восстановление">
+                    <div class="service-overlay">
+                        <h3>Биопротеиновое восстановление волос</h3>
+                        <div class="price">от 5000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://p-de-p.co.uk/wp-content/uploads/2023/09/hair-extension-cover.jpg" alt="Холодное испанское наращивание">
+                    <div class="service-overlay">
+                        <h3>Холодное испанское наращивание волос</h3>
+                        <div class="price">от 50 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.squarespace-cdn.com/content/v1/65df5ff8502b9f2c3fc528f5/cf481c91-38e5-47f8-8082-c77bb3bdc627/Photo+May+12+2024%2C+8+59+38+AM.jpg" alt="Итальянское горячее наращивание волос">
+                    <div class="service-overlay">
+                        <h3>Итальянское горячее наращивание волос</h3>
+                        <div class="price">от 30 000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://i0.wp.com/aurahaircompany.com/wp-content/uploads/2023/02/Dimensional-Balayage.jpg?resize=1079%2C550&ssl=1" alt="Окрашивание волос">
+                    <div class="service-overlay">
+                        <h3>Окрашивание волос</h3>
+                        <div class="price">от 8000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://imagehairlondon.co.uk/wp-content/uploads/2025/09/post-keratin-silky-shiny-hair.jpg-1024x683.png" alt="Кератиновое восстановление">
+                    <div class="service-overlay">
+                        <h3>Кератиновое восстановление</h3>
+                        <div class="price">от 3000 ₽</div>
+                        <a href="#booking" class="btn">Записаться</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Онлайн-запись (без изменений) -->
+    <!-- Онлайн-запись -->
     <section id="booking" data-aos="fade-up">
-        <!-- ... -->
+        <div class="container">
+            <h2 data-aos="fade-down" data-aos-delay="200">Онлайн-запись</h2>
+            <div class="form-container" data-aos="fade-up" data-aos-delay="400">
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <select required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option>Наращивание ресниц</option>
+                        <option>Наращивание ногтей</option>
+                        <option>Биопротеиновое восстановление</option>
+                        <option>Холодное испанское наращивание</option>
+                        <option>Итальянское горячее наращивание</option>
+                        <option>Окрашивание волос</option>
+                        <option>Кератиновое восстановление</option>
+                        <option>Другое</option>
+                    </select>
+                    <input type="date" required>
+                    <input type="time" required>
+                    <textarea rows="4" placeholder="Комментарий (по желанию)"></textarea>
+                    <button type="submit">Записаться</button>
+                </form>
+            </div>
+        </div>
     </section>
 
-    <!-- Контакты с кнопкой Telegram -->
+    <!-- Контакты — только Telegram -->
     <section id="contacts" data-aos="fade-up">
-        <div class="container">
-            <h2 data-aos="fade-down" data-aos-delay="200">Контакты</h2>
-            <div class="contacts-grid">
-                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
-                    <h3>Мы ждём вас</h3>
-                    <p>г. Москва, ул. Примерная, д. 10<br>
-                    Метро: Тверская / Пушкинская</p>
-                    <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a><br>
-                    WhatsApp: <a href="https://wa.me/79991234567">+7 (999) 123-45-67</a></p>
-                    <p>Время работы:<br>
-                    Пн–Вс: 10:00 – 21:00</p>
-                    <p>Instagram: <a href="https://instagram.com/alatorceva_beauty" target="_blank">@alatorceva_beauty</a></p>
-
-                    <!-- Кнопка Telegram -->
-                    <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn">
-                        Написать в Telegram
-                    </a>
-                </div>
-                <div class="map-placeholder" data-aos="fade-left" data-aos-delay="400" style="background:#eee; height:400px; display:flex; align-items:center; justify-content:center; color:#999; border-radius:15px;">
-                    Здесь будет карта (вставьте iframe Яндекс или Google)
-                </div>
-            </div>
+        <div class="contacts-telegram">
+            <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn">
+                Написать в Telegram @Cochacto
+            </a>
         </div>
     </section>
 
