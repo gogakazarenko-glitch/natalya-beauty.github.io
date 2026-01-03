@@ -114,23 +114,26 @@
             color: #d4af97;
             margin-bottom: 30px;
         }
-        .btn {
+        /* Новая кнопка Telegram на каждой карточке */
+        .telegram-btn-service {
             display: inline-block;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 14px 40px;
+            background: linear-gradient(to right, #d4af97, #e8b4bc);
+            color: #ffffff;
+            padding: 16px 50px;
+            border-radius: 50px;
             font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(212, 165, 165, 0.4);
             transition: all 0.4s;
         }
-        .btn:hover {
-            background: #d4af97;
-            border-color: #d4af97;
-            color: #000;
+        .telegram-btn-service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.6);
         }
 
-        /* Запись */
-        #booking { background: #f8f8f8; }
+        /* Запись и контакты */
+        #booking, #contacts { background: #f8f8f8; }
         .form-container { max-width: 800px; margin: 0 auto; text-align: center; }
         form { display: grid; gap: 30px; max-width: 600px; margin: 0 auto; }
         input, select, textarea {
@@ -152,25 +155,25 @@
         }
         button[type="submit"]:hover { background: #d4af97; color: #000; }
 
-        /* Контакты — только Telegram */
-        #contacts { background: #f8f8f8; padding: 150px 20px; }
+        /* Контакты — только большая кнопка Telegram */
         .contacts-telegram {
             text-align: center;
+            padding: 150px 20px;
         }
-        .telegram-btn {
+        .telegram-btn-big {
             display: inline-block;
             background: linear-gradient(to right, #d4af97, #e8b4bc);
             color: #ffffff;
-            padding: 25px 70px;
+            padding: 30px 80px;
             border-radius: 50px;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            box-shadow: 0 15px 40px rgba(212, 165, 165, 0.4);
+            font-size: 2.2rem;
+            box-shadow: 0 20px 50px rgba(212, 165, 165, 0.5);
             transition: all 0.4s;
         }
-        .telegram-btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(212, 165, 165, 0.6);
+        .telegram-btn-big:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(212, 165, 165, 0.7);
         }
 
         footer {
@@ -200,14 +203,16 @@
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
-            .telegram-btn { font-size: 1.6rem; padding: 20px 50px; }
+            .telegram-btn-service { font-size: 1.2rem; padding: 14px 40px; }
+            .telegram-btn-big { font-size: 1.8rem; padding: 25px 60px; }
         }
 
         @media (max-width: 480px) {
             .logo { font-size: 2.6rem; }
             .logo span { font-size: 0.9rem; }
             .nav-links { font-size: 1.2rem; }
-            .telegram-btn { font-size: 1.4rem; padding: 18px 40px; }
+            .telegram-btn-service { font-size: 1.1rem; padding: 12px 35px; }
+            .telegram-btn-big { font-size: 1.6rem; padding: 20px 50px; }
         }
     </style>
 </head>
@@ -227,7 +232,6 @@
         </nav>
     </header>
 
-    <!-- Услуги -->
     <section id="services" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Услуги</h2>
@@ -237,7 +241,9 @@
                     <div class="service-overlay">
                         <h3>Наращивание ресниц</h3>
                         <div class="price">от 1500 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -246,7 +252,9 @@
                     <div class="service-overlay">
                         <h3>Наращивание ногтей</h3>
                         <div class="price">от 2000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -255,7 +263,9 @@
                     <div class="service-overlay">
                         <h3>Биопротеиновое восстановление волос</h3>
                         <div class="price">от 5000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -264,7 +274,9 @@
                     <div class="service-overlay">
                         <h3>Холодное испанское наращивание волос</h3>
                         <div class="price">от 50 000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -273,7 +285,9 @@
                     <div class="service-overlay">
                         <h3>Итальянское горячее наращивание волос</h3>
                         <div class="price">от 30 000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -282,7 +296,9 @@
                     <div class="service-overlay">
                         <h3>Окрашивание волос</h3>
                         <div class="price">от 8000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
 
@@ -291,14 +307,16 @@
                     <div class="service-overlay">
                         <h3>Кератиновое восстановление</h3>
                         <div class="price">от 3000 ₽</div>
-                        <a href="#booking" class="btn">Записаться</a>
+                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">
+                            Связаться в Telegram @Cochacto
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Онлайн-запись -->
+    <!-- Онлайн-запись (оставил, но можно убрать, если не нужна) -->
     <section id="booking" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Онлайн-запись</h2>
@@ -329,8 +347,8 @@
     <!-- Контакты — только Telegram -->
     <section id="contacts" data-aos="fade-up">
         <div class="contacts-telegram">
-            <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn">
-                Написать в Telegram @Cochacto
+            <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-big">
+                Связаться в Telegram @Cochacto
             </a>
         </div>
     </section>
