@@ -114,26 +114,27 @@
             color: #d4af97;
             margin-bottom: 30px;
         }
-        /* Новая кнопка Telegram на каждой карточке */
+        /* Прозрачная кнопка на карточках */
         .telegram-btn-service {
             display: inline-block;
-            background: linear-gradient(to right, #d4af97, #e8b4bc);
+            background: transparent;
+            border: 2px solid #ffffff;
             color: #ffffff;
-            padding: 16px 50px;
+            padding: 14px 50px;
             border-radius: 50px;
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             letter-spacing: 2px;
-            box-shadow: 0 10px 30px rgba(212, 165, 165, 0.4);
             transition: all 0.4s;
         }
         .telegram-btn-service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(212, 165, 165, 0.6);
+            background: rgba(212, 175, 151, 0.3); /* лёгкий rose gold при наведении */
+            border-color: #d4af97;
+            color: #ffffff;
         }
 
-        /* Запись и контакты */
-        #booking, #contacts { background: #f8f8f8; }
+        /* Запись */
+        #booking { background: #f8f8f8; }
         .form-container { max-width: 800px; margin: 0 auto; text-align: center; }
         form { display: grid; gap: 30px; max-width: 600px; margin: 0 auto; }
         input, select, textarea {
@@ -155,25 +156,28 @@
         }
         button[type="submit"]:hover { background: #d4af97; color: #000; }
 
-        /* Контакты — только большая кнопка Telegram */
+        /* Контакты — большая прозрачная кнопка */
         .contacts-telegram {
             text-align: center;
             padding: 150px 20px;
         }
         .telegram-btn-big {
             display: inline-block;
-            background: linear-gradient(to right, #d4af97, #e8b4bc);
-            color: #ffffff;
+            background: transparent;
+            border: 3px solid #d4af97;
+            color: #d4af97;
             padding: 30px 80px;
             border-radius: 50px;
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            box-shadow: 0 20px 50px rgba(212, 165, 165, 0.5);
+            font-size: 2.4rem;
+            letter-spacing: 3px;
             transition: all 0.4s;
         }
         .telegram-btn-big:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(212, 165, 165, 0.7);
+            background: rgba(212, 175, 151, 0.2);
+            color: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-8px);
         }
 
         footer {
@@ -203,7 +207,7 @@
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 500px; }
             section { padding: 80px 0; }
-            .telegram-btn-service { font-size: 1.2rem; padding: 14px 40px; }
+            .telegram-btn-service { font-size: 1.2rem; padding: 12px 40px; }
             .telegram-btn-big { font-size: 1.8rem; padding: 25px 60px; }
         }
 
@@ -211,7 +215,7 @@
             .logo { font-size: 2.6rem; }
             .logo span { font-size: 0.9rem; }
             .nav-links { font-size: 1.2rem; }
-            .telegram-btn-service { font-size: 1.1rem; padding: 12px 35px; }
+            .telegram-btn-service { font-size: 1.1rem; padding: 10px 35px; }
             .telegram-btn-big { font-size: 1.6rem; padding: 20px 50px; }
         }
     </style>
@@ -316,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Онлайн-запись (оставил, но можно убрать, если не нужна) -->
+    <!-- Онлайн-запись (оставил) -->
     <section id="booking" data-aos="fade-up">
         <div class="container">
             <h2 data-aos="fade-down" data-aos-delay="200">Онлайн-запись</h2>
@@ -344,7 +348,7 @@
         </div>
     </section>
 
-    <!-- Контакты — только Telegram -->
+    <!-- Контакты — большая прозрачная кнопка -->
     <section id="contacts" data-aos="fade-up">
         <div class="contacts-telegram">
             <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-big">
