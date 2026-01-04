@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Алаторцева Наталия | Beauty Studio</title>
-    <meta name="description" content="Дерзкий стиль и премиальное качество: ресницы, волосы, окрашивание. Москва.">
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=Sacramento&family=Inter:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -23,13 +21,10 @@
             font-family: 'Inter', sans-serif;
             background: var(--white);
             color: var(--dark);
-            line-height: 1.7;
             overflow-x: hidden;
-            /* Улучшение рендеринга шрифтов */
-            -webkit-font-smoothing: antialiased;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* ИСПРАВЛЕННЫЙ HEADER ДЛЯ МОБИЛЬНЫХ */
         header {
             position: relative;
             height: 100vh;
@@ -37,17 +32,15 @@
             display: flex;
             flex-direction: column;
             background-color: #1a1a1a; 
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                              url('https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                              url('https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200');
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
-            /* Исправление для iOS: запрещаем параллакс, который скрывает фото */
-            background-attachment: scroll; 
         }
 
         nav {
-            padding: 25px 5%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,30 +49,9 @@
 
         .logo {
             font-family: 'Sacramento', cursive;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: 2.2rem;
             color: var(--white);
-            line-height: 1;
         }
-
-        .logo span {
-            display: block;
-            font-family: 'Playfair Display', serif;
-            font-size: 0.3em;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 30px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--accent); }
 
         .hero-text {
             flex-grow: 1;
@@ -90,147 +62,101 @@
             text-align: center;
             color: white;
             padding: 0 20px;
-            z-index: 2;
         }
 
         .hero-text h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 12vw, 7rem);
+            font-size: clamp(2.5rem, 10vw, 6rem);
             text-transform: uppercase;
-            line-height: 0.9;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .hero-text h1 span {
-            display: block;
-            -webkit-text-stroke: 1px var(--white);
-            color: transparent;
-        }
-
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        section { padding: 100px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; }
 
         h2 {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 60px;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        /* ИСПРАВЛЕННЫЙ БЛОК УСЛУГ */
         .service-item {
             position: relative;
-            height: 550px;
+            height: 450px;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            /* Форсируем аппаратное ускорение для мобильных */
-            transform: translateZ(0); 
-            background: #1a1a1a;
+            border-radius: 12px;
+            background: #222;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translate3d(0,0,0);
         }
 
         .service-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover !important; /* Гарантируем заполнение */
+            object-fit: cover !important;
             display: block;
-            transition: transform 1.5s ease;
+            min-height: 100%;
         }
-
-        .service-item:hover img { transform: scale(1.1); }
 
         .service-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 15%, transparent 100%);
             color: #fff;
-            padding: 40px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             text-align: center;
         }
 
-        .service-overlay h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 25px;
-        }
+        .price { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; }
 
         .telegram-btn-service {
             display: inline-block;
             border: 1px solid var(--white);
             color: var(--white);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            transition: 0.4s;
+            padding: 10px 20px;
+            border-radius: 40px;
             text-decoration: none;
-        }
-
-        .telegram-btn-service:hover {
-            background: var(--white);
-            color: var(--dark);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
         }
 
         .contacts-telegram {
             text-align: center;
-            padding: 100px 5%;
+            padding: 60px 20px;
             background: var(--dark);
             color: white;
         }
 
         .telegram-btn-big {
             display: inline-block;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            padding: 25px 60px;
-            border-radius: 60px;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.1rem, 3vw, 2rem);
-            transition: 0.4s;
-            text-decoration: none;
-            margin-top: 30px;
-        }
-
-        .telegram-btn-big:hover {
             background: var(--accent);
             color: var(--dark);
-            transform: translateY(-5px);
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            text-transform: uppercase;
         }
 
         footer {
-            background: var(--dark);
-            color: #666;
+            padding: 30px;
             text-align: center;
-            padding: 40px 0;
-            font-size: 0.9rem;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-item { height: 450px; }
-            header { background-position: center center; } 
-            .hero-text h1 { line-height: 1.1; }
-            section { padding: 60px 0; }
+            background: #000;
+            color: #555;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -238,88 +164,78 @@
 
     <header>
         <nav>
-            <div class="logo">
-                Наталия Алаторцева
-                <span>Beauty Studio</span>
-            </div>
-            <div class="nav-links">
-                <a href="#services">Услуги</a>
-                <a href="#contacts">Контакты</a>
-            </div>
+            <div class="logo">Наталия Алаторцева</div>
         </nav>
         <div class="hero-text">
-            <h1 data-aos="zoom-out" data-aos-duration="1500">
-                BEAUTY <span>REBEL</span>
-            </h1>
-            <p data-aos="fade-up" data-aos-delay="500" style="letter-spacing: 5px; text-transform: uppercase; margin-top: 20px; font-weight: 300;">Эксклюзивный уход. Смелые решения.</p>
-        </div>
+            <h1 data-aos="fade-up">BEAUTY REBEL</h1>
+            </div>
     </header>
 
     <section id="services">
         <div class="container">
-            <h2 data-aos="fade-up">Услуги</h2>
+            <h2>Услуги</h2>
             <div class="services-grid">
                 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://images.pexels.com/photos/4612159/pexels-photo-4612159.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Наращивание ресниц">
+                    <img src="https://images.pexels.com/photos/4612159/pexels-photo-4612159.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Ресницы">
                     <div class="service-overlay">
                         <h3>Наращивание ресниц</h3>
                         <div class="price">от 1500 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
-                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Наращивание ногтей">
+                <div class="service-item" data-aos="fade-up">
+                    <img src="https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Ногти">
                     <div class="service-overlay">
                         <h3>Наращивание ногтей</h3>
                         <div class="price">от 2000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
-                    </div>
-                </div>
-
-                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.pexels.com/photos/3738339/pexels-photo-3738339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Биопротеин">
-                    <div class="service-overlay">
-                        <h3>Биопротеиновое восстановление</h3>
-                        <div class="price">от 5000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://images.pexels.com/photos/973401/pexels-photo-973401.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Испанское наращивание">
+                    <img src="https://images.pexels.com/photos/3738339/pexels-photo-3738339.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Биопротеин">
                     <div class="service-overlay">
-                        <h3>Холодное испанское наращивание</h3>
+                        <h3>Биопротеин</h3>
+                        <div class="price">от 5000 ₽</div>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up">
+                    <img src="https://images.pexels.com/photos/973401/pexels-photo-973401.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Испанское">
+                    <div class="service-overlay">
+                        <h3>Испанское наращивание</h3>
                         <div class="price">от 50 000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
-                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Итальянское наращивание">
+                <div class="service-item" data-aos="fade-up">
+                    <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Итальянское">
                     <div class="service-overlay">
-                        <h3>Итальянское горячее наращивание</h3>
+                        <h3>Итальянское наращивание</h3>
                         <div class="price">от 30 000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
-                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.pexels.com/photos/3065161/pexels-photo-3065161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Окрашивание">
+                <div class="service-item" data-aos="fade-up">
+                    <img src="https://images.pexels.com/photos/3065161/pexels-photo-3065161.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Окрашивание">
                     <div class="service-overlay">
                         <h3>Окрашивание волос</h3>
                         <div class="price">от 8000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Кератин">
+                    <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=600" loading="eager" alt="Кератин">
                     <div class="service-overlay">
-                        <h3>Кератиновое восстановление</h3>
+                        <h3>Кератин / Ботокс</h3>
                         <div class="price">от 3000 ₽</div>
-                        <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-service">Записаться в TG</a>
+                        <a href="https://t.me/Cochacto" class="telegram-btn-service">Записаться</a>
                     </div>
                 </div>
 
@@ -327,25 +243,17 @@
         </div>
     </section>
 
-    <section id="contacts">
-        <div class="contacts-telegram">
-            <h2 data-aos="fade-up">Будем рады вам</h2>
-            <p style="opacity: 0.8;">Запись ведется только через личные сообщения</p>
-            <a href="https://t.me/Cochacto" target="_blank" class="telegram-btn-big" data-aos="zoom-in">
-                Связаться в Telegram
-            </a>
-        </div>
+    <section class="contacts-telegram">
+        <a href="https://t.me/Cochacto" class="telegram-btn-big">Записаться через Telegram</a>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Алаторцева Наталия Beauty Studio. Все права защищены.</p>
-        </div>
+        &copy; 2026 Алаторцева Наталия. Все права защищены.
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
