@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="Алаторцева Наталия | Beauty Studio">
     <meta property="og:description" content="Премиальные beauty-услуги в Москве. Запись через Telegram.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200">
+    <meta property="og:image" content="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1200">
     <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=Sacramento&family=Inter:wght@300;700&display=swap" rel="stylesheet">
@@ -33,13 +33,17 @@
         }
 
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2000') center/cover no-repeat;
+            position: relative;
             height: 100vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
-            position: relative;
-            background-attachment: fixed; /* Эффект параллакса на ПК */
+            background-color: #1a1a1a; 
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                              url('https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         nav {
@@ -86,6 +90,7 @@
             text-align: center;
             color: white;
             padding: 0 20px;
+            z-index: 2;
         }
 
         .hero-text h1 {
@@ -93,6 +98,7 @@
             font-size: clamp(2.5rem, 12vw, 7rem);
             text-transform: uppercase;
             line-height: 0.9;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .hero-text h1 span {
@@ -136,7 +142,7 @@
         .service-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: #fff;
             padding: 40px;
             display: flex;
@@ -210,12 +216,12 @@
             border-top: 1px solid #1a1a1a;
         }
 
-        /* Адаптация для мобильных */
         @media (max-width: 768px) {
-            header { background-attachment: scroll; }
-            .nav-links { display: none; } /* Скрываем меню на мобилках для чистоты */
+            .nav-links { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .service-item { height: 450px; }
+            header { background-position: center center; } 
+            .hero-text h1 { line-height: 1.1; }
         }
     </style>
 </head>
@@ -246,7 +252,7 @@
             <div class="services-grid">
                 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://cocolashbeautybar.com/wp-content/uploads/2024/03/AdobeStock_546702995-1800x1100-1.webp" alt="Наращивание ресниц">
+                    <img src="https://images.pexels.com/photos/4612159/pexels-photo-4612159.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Наращивание ресниц">
                     <div class="service-overlay">
                         <h3>Наращивание ресниц</h3>
                         <div class="price">от 1500 ₽</div>
@@ -255,7 +261,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://fd2d57c93a9bc78bdcec.cdn6.editmysite.com/uploads/b/fd2d57c93a9bc78bdcecc04ca2dcf85f22874e44c9f0727815eadd0228308399/2023-08-15_07-57-37_1692100687.jpg?width=2400" alt="Наращивание ногтей">
+                    <img src="https://images.pexels.com/photos/3997389/pexels-photo-3997389.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Наращивание ногтей">
                     <div class="service-overlay">
                         <h3>Наращивание ногтей</h3>
                         <div class="price">от 2000 ₽</div>
@@ -264,7 +270,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/379ea527-6da0-44b3-bb74-ce8287831e9f.__CR0,0,2500,1875_PT0_SX600_V1___.jpg" alt="Биопротеин">
+                    <img src="https://images.pexels.com/photos/3738339/pexels-photo-3738339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Биопротеин">
                     <div class="service-overlay">
                         <h3>Биопротеиновое восстановление</h3>
                         <div class="price">от 5000 ₽</div>
@@ -273,7 +279,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://p-de-p.co.uk/wp-content/uploads/2023/09/hair-extension-cover.jpg" alt="Испанское наращивание">
+                    <img src="https://images.pexels.com/photos/973401/pexels-photo-973401.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Испанское наращивание">
                     <div class="service-overlay">
                         <h3>Холодное испанское наращивание</h3>
                         <div class="price">от 50 000 ₽</div>
@@ -282,7 +288,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.squarespace-cdn.com/content/v1/65df5ff8502b9f2c3fc528f5/cf481c91-38e5-47f8-8082-c77bb3bdc627/Photo+May+12+2024%2C+8+59+38+AM.jpg" alt="Итальянское наращивание">
+                    <img src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Итальянское наращивание">
                     <div class="service-overlay">
                         <h3>Итальянское горячее наращивание</h3>
                         <div class="price">от 30 000 ₽</div>
@@ -291,7 +297,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://i0.wp.com/aurahaircompany.com/wp-content/uploads/2023/02/Dimensional-Balayage.jpg?resize=1079%2C550&ssl=1" alt="Окрашивание">
+                    <img src="https://images.pexels.com/photos/3065161/pexels-photo-3065161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Окрашивание">
                     <div class="service-overlay">
                         <h3>Окрашивание волос</h3>
                         <div class="price">от 8000 ₽</div>
@@ -300,7 +306,7 @@
                 </div>
 
                 <div class="service-item" data-aos="fade-up">
-                    <img src="https://imagehairlondon.co.uk/wp-content/uploads/2025/09/post-keratin-silky-shiny-hair.jpg-1024x683.png" alt="Кератин">
+                    <img src="https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Кератин">
                     <div class="service-overlay">
                         <h3>Кератиновое восстановление</h3>
                         <div class="price">от 3000 ₽</div>
